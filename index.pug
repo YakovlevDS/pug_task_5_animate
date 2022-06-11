@@ -1,0 +1,25 @@
+- var texts1 = ['G', 'i', 't'];
+- var texts2 = ['c', 'o', 'm', 'm', 'u', 'n', 'i', 't', 'y'];
+
+.box
+  .rec-container
+    .circle
+    .rec REC
+  .pc
+    .display
+    .keyboard
+    .arrow-in-pc
+      .circle-in-pc
+      .triangle-in-pc
+      .rectangle-in-pc
+  .github
+    .git
+      - for (var i = 0; i < texts1.length; i++)
+        span(class="texts1-" + i) #{texts1[i]}
+    .hub Hub
+    .com
+      - for (var i = 0; i < texts2.length; i++)
+        span(class="texts2-" + i) #{texts2[i]}
+.arrow
+  .triangle
+  .rectangle

@@ -1,0 +1,343 @@
+html *,
+::before,
+::after
+  box-sizing: border-box;
+  
+html, body
+  height: 100%;
+  width: 100%;
+
+body
+  background: #000;
+  color: #FFA403;
+  font-family: 'arial black', 'ArialRoundedMTBold', sans-serif;
+  text-align: center;
+  overflow: hidden;
+
+span
+  display: inline-block;
+  
+.box
+  left: 50%;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  white-space: nowrap;
+  
+.rec-container
+  animation: rec-container-fall 0.4s ease 0.4s 1 normal forwards running;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  
+@keyframes rec-container-fall
+  0%
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  100%
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  
+.circle
+  animation: circle-flash 0.4s ease 0s infinite normal none running;
+  background: #FFA403;
+  border-radius: 50%;
+  display: inline-block;
+  height: 24px;
+  opacity: 1;
+  width: 24px;
+
+@keyframes circle-flash
+  0%
+    opacity: 1;
+  50%
+    opacity: 0;
+  100%
+    opacity: 1;
+
+.rec
+  display: inline-block;
+  font-size: 32px;
+  
+.pc
+  animation: pc-up 0.8s ease-in 0.4s 1 normal forwards running;
+  height: 70px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 100%);
+  width: 140px;
+  
+@keyframes pc-up
+  0%
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  10%
+    opacity: 1;
+    transform: translate(-50%, -70%);
+  100%
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+.display
+  animation: display-open 0.4s ease 0.4s 1 normal forwards running,
+             display-shrink 0.4s ease 1.2s 1 normal forwards running;
+  border: 8px solid;
+  border-radius: 8px;
+  height: 66px;
+  margin: 0 auto 8px;
+  position: relative;
+  transform: rotateX(-90deg) scaleX(1);
+  transform-origin: bottom center;
+  opacity: 1;
+  width: 110px;
+  
+@keyframes display-open
+  0%
+    transform: rotateX(-90deg) scaleX(1);
+  10%
+    transform: rotateX(-90deg) scaleX(1);
+  100%
+    transform: rotateX(0deg) scaleX(1);
+
+@keyframes display-shrink
+  0%
+    opacity: 1;
+    transform: rotateX(0deg) scaleX(1);
+  100%
+    opacity: 0;
+    transform: rotateX(0deg) scaleX(0);
+  
+.keyboard
+  animation: keyboard-shrink 0.4s ease 1.2s 1 normal forwards running;
+  background: #FFA403;
+  border-radius: 3px 3px 10px 10px;
+  height: 8px;
+  opacity: 1;
+  transform: scaleX(1);
+  width: 140px;
+
+@keyframes keyboard-shrink
+  0%
+    opacity: 1;
+    transform: scaleX(1);
+  100%
+    opacity: 0;
+    transform: scaleX(0);
+  
+.arrow-in-pc
+  animation: arrow-in-pc-hide 0.1s ease 2.0s 1 normal forwards running;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+@keyframes arrow-in-pc-hide
+  0%
+    opacity: 1;
+  100%
+    opacity: 0;
+  
+.circle-in-pc
+  animation: circle-in-pc-up 0.6s ease-in-out 0.4s 1 normal forwards running,
+             circle-in-pc-transform 1.0s ease-in-out 1.0s 1 normal forwards running;
+  background: #FFA403;
+  border-radius: 50%;
+  height: 40px;
+  opacity: 0;
+  transform: translateY(100%);
+  width: 40px;
+
+@keyframes circle-in-pc-up
+  0%
+    opacity: 0;
+    transform: translateY(100%);
+  100%
+    opacity: 1;
+    transform: translateY(0);
+    
+@keyframes circle-in-pc-transform
+  0%
+    background: #FFA403;
+    border: none;
+    transform: translate(0, 0) scale(1, 1);
+  100%
+    background: #000;
+    border: solid 2px #FFA403;
+    transform: translate(0, 0) scale(1.5, 1.5);
+    
+.triangle-in-pc
+  animation: triangle-in-pc-up 0.4s ease-in-out 0.6s 1 normal forwards running,
+             triangle-in-pc-rotate 0.4s ease-in-out 1.0s 1 normal forwards running;
+  border-style: solid;
+  border-width: 0 12.5px 21.6px 12.5px;
+  border-color: transparent transparent #000 transparent;
+  height: 0;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 100%);
+  width: 0;
+  
+@keyframes triangle-in-pc-up
+  0%
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  100%
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    
+@keyframes triangle-in-pc-rotate
+  0%
+    border-color: transparent transparent #000 transparent;
+    transform: scale(0, 0) translate(-50%, -50%) rotate(0deg);
+  100%
+    border-color: transparent transparent #FFA403 transparent;
+    transform: scale(1, 1) translate(-40%, -50%) rotate(90deg);
+    
+.rectangle-in-pc
+  animation: rectangle-in-pc-up 0.4s ease-in-out 0.6s 1 normal forwards running;
+  background: #000;
+  height: 20px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 100%);
+  width: 10px;
+
+@keyframes rectangle-in-pc-up
+  0%
+    opacity: 1;
+    transform: translate(-50%, 100%);
+  30%
+    opacity: 1;
+    transform: translate(-50%, 200%);
+  100%
+    opacity: 0;
+    transform: translate(-50%, 100%);
+    
+.arrow
+  animation: arrow-to-center 0.8s ease 1.0s 1 normal forwards running;
+  left: 70%;
+  opacity: 0;
+  position: fixed;
+  top: 70%;
+  transform: rotate(-45deg);
+  
+@keyframes arrow-to-center
+  0%
+    left: 70%;
+    opacity: 0;
+    top: 70%;
+  99%
+    left: 50%;
+    opacity: 1;
+    top: 50%;
+  100%
+    left: 50%;
+    opacity: 0;
+    top: 50%;
+  
+.triangle
+  border-style: solid;
+  border-width: 0 14px 14px 14px;
+  border-color: transparent transparent #FFA403 transparent;
+  height: 0;
+  position: relative;
+  width: 0;
+  &::after
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #000 transparent;
+    content: '';
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 3px);
+    width: 0;
+  
+.rectangle
+  background: #FFA403;
+  height: 14px;
+  margin: 0 auto;
+  position: relative;
+  width: 14px;
+  &::after
+    background: #000;
+    content: '';
+    height: 17px;
+    left: 50%;
+    position: absolute;
+    top: -5px;
+    transform: translate(-50%, 0);
+    width: 9px;
+  
+.github
+  color: #FFF;
+    
+.git
+  color: #FFA403;
+  display: inline-block;
+  font-size: 56px;
+  
+for i in (0..3)
+  .texts1-{i}
+    animation: texts1-show- + i 0.05s ease 1.8 + (i * 0.05)s 1 normal forwards running;
+    opacity: 0;
+    
+for i in (0..3)
+  @keyframes texts1-show-{i}
+    0%
+      color: #FFA403;
+      opacity: 0;
+    90%
+      color: #FFA403;
+      opacity: 1;
+    100%
+      color: #FFF;
+      opacity: 1;
+    
+.hub
+  animation: hub-show 0.35s ease-in-out 1.9s 1 normal forwards running;
+  background: #FFA403;
+  border-radius: 8px;
+  color: #000;
+  display: inline-block;
+  padding: 8px;
+  font-size: 56px;
+  opacity: 0;
+  transform: rotate(-45deg) scale(0, 0);
+  transform-origin: left center;
+
+@keyframes hub-show
+  0%
+    opacity: 0;
+    transform: rotate(-45deg) scale(0, 0);
+  100%
+    opacity: 1;
+    transform: rotate(0deg) scale(1, 1);
+  
+.com
+  font-size: 36px;
+  letter-spacing: 1px;
+
+for i in (0..8)
+  .texts2-{i}
+    animation: texts2-show- + i 0.05s ease-in-out 1.8 + (i * 0.05)s 1 normal forwards running;
+    opacity: 0;
+
+for i in (0..8)
+  @keyframes texts2-show-{i}
+    0%
+      opacity: 0;
+      transform: rotate(45deg) translateY(100%);
+    100%
+      opacity: 1;
+      transform: rotate(0) translateY(0);
